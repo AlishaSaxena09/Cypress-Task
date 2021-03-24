@@ -37,9 +37,7 @@ describe("My First Test", () => {
     cy.get("select[data-test-id=project-billing-method]").select(
       "Hourly project rate"
     );
-    cy.get(":nth-child(2) > .field-value > .form-control").type(
-      "{selectall}20"
-    );
+    cy.get("input[data-test-id=project-rate]").type("{selectall}20");
     cy.contains("Submit").click({ force: true });
     cy.contains("Trix Web Development");
     cy.contains("Hourly Project Rate");
